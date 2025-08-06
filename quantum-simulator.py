@@ -153,16 +153,16 @@ def teleportation_circuit(psi_c):
     print(a,b,c)
 
     bob_qubit = None
-    if a == 0 and b == 0:  # outcome 00 → no correction
+    if a == 0 and b == 0:  # outcome 00 => no correction
         bob_qubit = psi_c
         print('No correction applied.')
-    elif a == 0 and b == 1:  # outcome 01 → apply X
+    elif a == 0 and b == 1:  # outcome 01 => apply X
         bob_qubit = X @ psi_c
         print('Z correction applied.')
-    elif a == 1 and b == 0:  # outcome 10 → apply Z
+    elif a == 1 and b == 0:  # outcome 10 => apply Z
         bob_qubit = Z @ psi_c
         print('X correction applied.')
-    elif a == 1 and b == 1:  # outcome 11 → apply XZ
+    elif a == 1 and b == 1:  # outcome 11 => apply XZ
         bob_qubit = X @ (Z @ psi_c)
         print('XZ correction applied.')
 
